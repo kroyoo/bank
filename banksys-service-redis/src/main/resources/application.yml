@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: banksys-service-redis #服务名称
+  zipkin:
+    base-url: http://localhost:9411
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    timeout: 1000
+    lettuce:
+     pool:
+       max-active: 8
+       max-idle: 8
+       max-wait: -1
+       min-idle: 0
+
+server:
+  port: 8805 #端口
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info #暴露所有的端点我们可以看到更多应用相关信息
+  endpoint:
+    health:
+      show-details: always  #health endpoint是否必须显示全部细节
+
