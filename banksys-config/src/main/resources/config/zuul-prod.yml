@@ -1,0 +1,17 @@
+spring:
+ application:
+   name: banksys-zuul
+server:
+ port: 8502 # 你的端口
+
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    api-a:
+      path: /it/**                          #访问路径
+      serviceId: banksys-service-admin
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/bank.iml" filepath="$PROJECT_DIR$/.idea/bank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-admin/banksys-admin.iml" filepath="$PROJECT_DIR$/banksys-admin/banksys-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-common/banksys-common.iml" filepath="$PROJECT_DIR$/banksys-common/banksys-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-common-domain/banksys-common-domain.iml" filepath="$PROJECT_DIR$/banksys-common-domain/banksys-common-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-common-service/banksys-common-service.iml" filepath="$PROJECT_DIR$/banksys-common-service/banksys-common-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-config/banksys-config.iml" filepath="$PROJECT_DIR$/banksys-config/banksys-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-dependencies/banksys-dependencies.iml" filepath="$PROJECT_DIR$/banksys-dependencies/banksys-dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-eureka/banksys-eureka.iml" filepath="$PROJECT_DIR$/banksys-eureka/banksys-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-service-admin/banksys-service-admin.iml" filepath="$PROJECT_DIR$/banksys-service-admin/banksys-service-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-service-redis/banksys-service-redis.iml" filepath="$PROJECT_DIR$/banksys-service-redis/banksys-service-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-service-sso/banksys-service-sso.iml" filepath="$PROJECT_DIR$/banksys-service-sso/banksys-service-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-web-admin/banksys-web-admin.iml" filepath="$PROJECT_DIR$/banksys-web-admin/banksys-web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-web-transfer/banksys-web-transfer.iml" filepath="$PROJECT_DIR$/banksys-web-transfer/banksys-web-transfer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-zipkin/banksys-zipkin.iml" filepath="$PROJECT_DIR$/banksys-zipkin/banksys-zipkin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banksys-zuul/banksys-zuul.iml" filepath="$PROJECT_DIR$/banksys-zuul/banksys-zuul.iml" />
+    </modules>
+  </component>
+</project>

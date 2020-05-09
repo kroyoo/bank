@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/banksys-dependencies/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-config/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-service-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-zipkin/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-common/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-web-admin/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-service-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-service-sso/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-common-domain/pom.xml" />
+        <option value="$PROJECT_DIR$/banksys-web-transfer/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

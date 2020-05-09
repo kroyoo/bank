@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: banksys-service-admin #服务名称
+  zipkin:
+    base-url: http://localhost:9411
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  datasource:
+#   数据源基本配置
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/banksys
+    type: com.alibaba.druid.pool.DruidDataSource
+#   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+server:
+  port: 8802 #端口
+mybatis:
+  type-aliass-package: com.kenyon.banksys.common.domain
+  mapper-locations: classpath:mapper/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+

@@ -1,0 +1,20 @@
+spring:
+ application:
+   name: banksys-eureka
+ zipkin:
+   base-url: http://localhost:9411
+ boot:
+   admin:
+     client:
+       url: http://localhost:8084
+server:
+ port: 8761 # 你的端口
+eureka:
+ instance:
+   hostname: localhost # 你的地址
+ client:
+   registerWithEureka: false
+   fetchRegistry: false # fetchRegistry表示是否从eureka服务器获取注册信息
+   serviceUrl:
+     #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+     defaultZone: http://localhost:8761/eureka/

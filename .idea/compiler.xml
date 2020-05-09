@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="banksys-admin" />
+        <module name="banksys-common" />
+        <module name="banksys-common-domain" />
+        <module name="banksys-common-service" />
+        <module name="banksys-config" />
+        <module name="banksys-eureka" />
+        <module name="banksys-service-admin" />
+        <module name="banksys-service-redis" />
+        <module name="banksys-service-sso" />
+        <module name="banksys-web-admin" />
+        <module name="banksys-web-transfer" />
+        <module name="banksys-zipkin" />
+        <module name="banksys-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="banksys-admin" target="1.8" />
+      <module name="banksys-common" target="1.8" />
+      <module name="banksys-common-domain" target="1.8" />
+      <module name="banksys-common-service" target="1.8" />
+      <module name="banksys-config" target="1.8" />
+      <module name="banksys-dependencies" target="1.8" />
+      <module name="banksys-eureka" target="1.8" />
+      <module name="banksys-service-admin" target="1.8" />
+      <module name="banksys-service-redis" target="1.8" />
+      <module name="banksys-service-sso" target="1.8" />
+      <module name="banksys-web-admin" target="1.8" />
+      <module name="banksys-web-transfer" target="1.8" />
+      <module name="banksys-zipkin" target="1.8" />
+      <module name="banksys-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

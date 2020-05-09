@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.zipkin.java:zipkin-autoconfigure-metrics-prometheus:2.12.2">
+    <CLASSES>
+      <root url="jar://D:/Java/repository/io/zipkin/java/zipkin-autoconfigure-metrics-prometheus/2.12.2/zipkin-autoconfigure-metrics-prometheus-2.12.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/Java/repository/io/zipkin/java/zipkin-autoconfigure-metrics-prometheus/2.12.2/zipkin-autoconfigure-metrics-prometheus-2.12.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/Java/repository/io/zipkin/java/zipkin-autoconfigure-metrics-prometheus/2.12.2/zipkin-autoconfigure-metrics-prometheus-2.12.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
