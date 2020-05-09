@@ -1,0 +1,23 @@
+spring:
+ application:
+   name: banksys-zuul
+ zipkin:
+   base-url: http://localhost:9411
+boot:
+   admin:
+     client:
+       url: http://localhost:8084
+server:
+ port: 8501 # 你的端口
+
+eureka:
+ client:
+   serviceUrl:
+     defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    api-a:
+      path: /it/**                          #访问路径
+      serviceId: banksys-service-admin
+

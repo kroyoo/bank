@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: banksys-web-admin #服务名称
+  zipkin:
+    base-url: http://localhost:9411
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  thymeleaf:
+    cache: false
+    model: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+server:
+  port: 8901 #端口
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info #暴露所有的端点我们可以看到更多应用相关信息
+  endpoint:
+    health:
+      show-details: always  #health endpoint是否必须显示全部细节
