@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kenyon.banksys.service.admin.mapper.CardInfoMapper">
+  <resultMap id="BaseResultMap" type="com.kenyon.banksys.service.admin.domain.CardInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="card_number" jdbcType="BIGINT" property="cardNumber" />
+    <result column="card_balance" jdbcType="DECIMAL" property="cardBalance" />
+    <result column="card_open_oney" jdbcType="DECIMAL" property="cardOpenOney" />
+    <result column="guest_id" jdbcType="INTEGER" property="guestId" />
+    <result column="card_password" jdbcType="VARCHAR" property="cardPassword" />
+    <result column="card_status" jdbcType="TINYINT" property="cardStatus" />
+    <result column="card_type" jdbcType="INTEGER" property="cardType" />
+    <result column="card_login_password" jdbcType="VARCHAR" property="cardLoginPassword" />
+    <result column="card_phone" jdbcType="VARCHAR" property="cardPhone" />
+    <result column="card_remark" jdbcType="VARCHAR" property="cardRemark" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888 #配置服务的地址 bootstrap.yml
+      name: service-admin
+      enabled: true #开启配置
+      profile: dev  #版本
+      label: ""     #git配置的分支信息，master类似的

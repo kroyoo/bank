@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kenyon.banksys.service.admin.mapper.GuestInfoMapper">
+  <resultMap id="BaseResultMap" type="com.kenyon.banksys.service.admin.domain.GuestInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="guest_id" jdbcType="INTEGER" property="guestId" />
+    <result column="guest_name" jdbcType="VARCHAR" property="guestName" />
+    <result column="guest_contact" jdbcType="VARCHAR" property="guestContact" />
+    <result column="guest_address" jdbcType="VARCHAR" property="guestAddress" />
+    <result column="guest_identify" jdbcType="VARCHAR" property="guestIdentify" />
+    <result column="guest_create_time" jdbcType="TIMESTAMP" property="guestCreateTime" />
+    <result column="guest_status" jdbcType="CHAR" property="guestStatus" />
+    <result column="guest_remark" jdbcType="VARCHAR" property="guestRemark" />
+    <result column="guest_card_number" jdbcType="TINYINT" property="guestCardNumber" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kenyon.banksys.service.admin.mapper.BankEmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.kenyon.banksys.common.domain.BankEmployee">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="employee_job_number" jdbcType="INTEGER" property="employeeJobNumber" />
+    <result column="employee_name" jdbcType="VARCHAR" property="employeeName" />
+    <result column="employee_gender" jdbcType="CHAR" property="employeeGender" />
+    <result column="employee_password" jdbcType="VARCHAR" property="employeePassword" />
+    <result column="employee_identify" jdbcType="VARCHAR" property="employeeIdentify" />
+    <result column="employee_address" jdbcType="VARCHAR" property="employeeAddress" />
+    <result column="employee_status" jdbcType="CHAR" property="employeeStatus" />
+    <result column="employee_phone" jdbcType="VARCHAR" property="employeePhone" />
+    <result column="employee_process_result" jdbcType="VARCHAR" property="employeeProcessResult" />
+  </resultMap>
+</mapper>
