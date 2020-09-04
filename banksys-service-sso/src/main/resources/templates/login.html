@@ -1,0 +1,390 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        html {
+            overflow-y: scroll;
+            vertical-align: baseline;
+        }
+
+        body {
+            font-family: Microsoft YaHei, Segoe UI, Tahoma, Arial, Verdana, sans-serif;
+            font-size: 12px;
+            color: #fff;
+            height: 100%;
+            line-height: 1;
+            background: #999
+        }
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul, li {
+            list-style: none
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, .2)
+        }
+
+        .login-box {
+            width: 410px;
+            margin: 120px auto 0 auto;
+            text-align: center;
+            padding: 30px;
+            background: url(/images/mask.png);
+            border-radius: 10px;
+        }
+
+        .login-box .name, .login-box .password, .login-box .code, .login-box .remember {
+            font-size: 16px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .1)
+        }
+
+        .login-box .remember input {
+            box-shadow: none;
+            width: 15px;
+            height: 15px;
+            margin-top: 25px
+        }
+
+        .login-box .remember {
+            padding-left: 40px
+        }
+
+        .login-box .remember label {
+            display: inline-block;
+            height: 42px;
+            width: 70px;
+            line-height: 34px;
+            text-align: left
+        }
+
+        .login-box label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            vertical-align: middle
+        }
+
+        .login-box #code {
+            width: 120px
+        }
+
+        .login-box .codeImg {
+            float: right;
+            margin-top: 26px;
+        }
+
+        .login-box img {
+            width: 148px;
+            height: 42px;
+            border: none
+        }
+
+        input[type=text], input[type=password] {
+            width: 270px;
+            height: 42px;
+            margin-top: 25px;
+            padding: 0px 15px;
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 6px;
+            color: #fff;
+            letter-spacing: 2px;
+            font-size: 16px;
+            background: transparent;
+        }
+
+        button {
+            cursor: pointer;
+            width: 100%;
+            height: 44px;
+            padding: 0;
+            background: #ef4300;
+            border: 1px solid #ff730e;
+            border-radius: 6px;
+            font-weight: 700;
+            color: #fff;
+            font-size: 24px;
+            letter-spacing: 15px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .1)
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset, 0 2px 7px 0 rgba(0, 0, 0, .2)
+        }
+
+        button:hover {
+            box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .15) inset, 0 2px 7px 0 rgba(0, 0, 0, .2)
+        }
+
+        .screenbg {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: -999;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        .screenbg ul li {
+            display: block;
+            list-style: none;
+            position: fixed;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1000;
+            float: right;
+        }
+
+        .screenbg ul a {
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            cursor: default;
+        }
+
+        .screenbg a img {
+            vertical-align: middle;
+            display: inline;
+            border: none;
+            display: block;
+            list-style: none;
+            position: fixed;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1000;
+            float: right;
+        }
+
+        .bottom {
+            margin: 8px auto 0 auto;
+            width: 100%;
+            position: fixed;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            padding-bottom: 8px;
+            color: #ccc;
+            word-spacing: 3px;
+            zoom: 1;
+        }
+
+        .bottom a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        .bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- Javascript -->
+    <script src="/js/jquery-1.8.2.min.js"></script>
+    <script src="/js/supersized.3.2.7.min.js"></script>
+    <script src="/js/supersized-init.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".screenbg ul li").each(function () {
+                $(this).css("opacity", "0");
+            });
+            $(".screenbg ul li:first").css("opacity", "1");
+            var index = 0;
+            var t;
+            var li = $(".screenbg ul li");
+            var number = li.size();
+
+            function change(index) {
+                li.css("visibility", "visible");
+                li.eq(index).siblings().animate({opacity: 0}, 3000);
+                li.eq(index).animate({opacity: 1}, 3000);
+            }
+
+            function show() {
+                index = index + 1;
+                if (index <= number - 1) {
+                    change(index);
+                } else {
+                    index = 0;
+                    change(index);
+                }
+            }
+
+            t = setInterval(show, 8000);
+            //根据窗口宽度生成图片宽度
+            var width = $(window).width();
+            $(".screenbg ul img").css("width", width + "px");
+        });
+
+        var codes = "";
+
+        jQuery(function($){
+
+            /**生成一个随机数**/
+            function randomNum(min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+            /**生成一个随机色**/
+            function randomColor(min, max) {
+                var r = randomNum(min, max);
+                var g = randomNum(min, max);
+                var b= randomNum(min, max);
+                return "rgb(" + r + "," + g + "," + b + ")";
+            }
+            var code=drawPic();
+            document.getElementById("changeImg").onclick = function(e) {
+                e.preventDefault();
+                code=drawPic();
+            }
+            /**绘制验证码图片**/
+
+            window.create_div=function(){
+                code=drawPic();
+            }
+            function drawPic() {
+                var canvas = document.getElementById("canvas");
+                var width = canvas.width;
+                var height = canvas.height;
+                //获取该canvas的2D绘图环境
+                var ctx = canvas.getContext('2d');
+                ctx.textBaseline ='bottom';
+                /**绘制背景色**/
+                ctx.fillStyle = randomColor(180,240);
+                //颜色若太深可能导致看不清
+                ctx.fillRect(0,0,width,height);
+                /**绘制文字**/
+                var str ='abcdefghijklmnopqlstuvwxzABCEFGHIJKLMNPQRSTWXY0123456789';
+
+                var code="";
+                //生成四个验证码
+                for(var i=1;i<=4;i++) {
+                    var txt = str[randomNum(0,str.length)];
+                    code=code+txt;
+                    ctx.fillStyle = randomColor(50,160);
+                    //随机生成字体颜色
+                    ctx.font = randomNum(15,40) +'px SimHei';
+                    //随机生成字体大小
+                    var x =10 +i *25;
+                    var y = randomNum(25,35);
+                    var deg = randomNum(-45,45);
+                    //修改坐标原点和旋转角度
+                    ctx.translate(x, y);
+                    ctx.rotate(deg * Math.PI /180);
+                    ctx.fillText(txt,0,0);
+                    //恢复坐标原点和旋转角度
+                    ctx.rotate(-deg * Math.PI /180);
+                    ctx.translate(-x, -y);
+                }
+                codes = code;
+                /**绘制干扰线**/
+                for(var i=0;i<3;i++) {
+                    ctx.strokeStyle = randomColor(40, 180);
+                    ctx.beginPath();
+                    ctx.moveTo(randomNum(0,width/2), randomNum(0,height/2));
+                    ctx.lineTo(randomNum(0,width/2), randomNum(0,height));
+                    ctx.stroke();
+                }
+                /**绘制干扰点**/
+                for(var i=0;i <50;i++) {
+                    ctx.fillStyle = randomColor(255);
+                    ctx.beginPath();
+                    ctx.arc(randomNum(0, width), randomNum(0, height),1,0,2* Math.PI);
+                    ctx.fill();
+                }
+                return code;
+            }
+        });
+
+
+        function validate() {
+            //获取输入的验证码
+            var inputCode = document.getElementById("code").value;
+
+            if(inputCode.length == 0) {
+                alert("请输入验证码");
+            } else {
+                if(inputCode.toUpperCase() === codes.toUpperCase()) {
+                    return true;
+                } else {
+                    alert("请重新输入验证码");
+                }
+            }
+            create_div();
+            return false;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="login-box">
+    <h1>银行账目管理系统</h1></br>
+    <div class="name">
+        <span style="color:#F00;" th:text="${message}"></span></br>
+    </div>
+    <form method="post" action="/login ">
+
+        <input type="hidden" name="url" th:value="${url}" />
+
+        <div class="name">
+            <label>账 号：</label>
+            <input type="text" name="loginCode" id="loginCode" tabindex="1" autocomplete="off" placeholder="请输入您的用户名！"
+                   ！/>
+        </div>
+        <div class="password">
+            <label>密 码：</label>
+            <input type="password" name="planPassword" maxlength="16" id="planPassword" tabindex="2"
+                   placeholder="请输入密码！"/>
+        </div>
+        <div class="code">
+            <label>验证码：</label>
+            <input type="text" name="" maxlength="4" id="code" tabindex="3"/>
+            <div class="codeImg">
+                <a href="#" id="changeImg">
+                    <canvas class="show-captcha" name="canvas" id="canvas" width="150" height="40"></canvas>
+                </a>
+            </div>
+        </div>
+        <div class="login">
+            <button type="submit" tabindex="5" id="order_submit" onclick="return validate();">登录</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="screenbg">
+    <ul>
+        <li><a href="javascript:;"><img src="/images/0.jpg"></a></li>
+        <li><a href="javascript:;"><img src="/images/1.jpg"></a></li>
+        <li><a href="javascript:;"><img src="/images/2.jpg"></a></li>
+    </ul>
+</div>
+<div style="text-align:center; padding-top:50px">
+    <p></p>
+</div>
+</body>
+</html>
