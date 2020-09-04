@@ -1,0 +1,605 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!-- begin::Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>银行账目管理 | 开户</title>
+    <meta name="description" content="Form wizard examples">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <!--begin::Global Theme Styles-->
+    <link href="/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+    <!--RTL     <link href="/assets/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+     <link href="/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+     <!--RTL version:<link href="/assets/demo/default/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+    <!--end::Global Theme Styles -->
+    <link rel="shortcut icon" href="/assets/demo/default/media/img/logo/favicon.ico" />
+</head>
+<!-- end::Head -->
+<!-- begin::Body -->
+
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-content">
+        <!--Begin::Main Portlet-->
+        <div class="m-portlet m-portlet--full-height">
+            <!--begin: Portlet Head-->
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                    </div>
+                </div>
+            </div>
+            <!--end: Portlet Head-->
+            <!--begin: Form Wizard-->
+            <div class="m-wizard m-wizard--2 m-wizard--success" id="m_wizard">
+                <!--begin: Message container -->
+                <div class="m-portlet__padding-x">
+                    <!-- Here you can put a message or alert -->
+                </div>
+                <!--end: Message container -->
+                <!--begin: Form Wizard Head -->
+                <div class="m-wizard__head m-portlet__padding-x">
+                    <!--begin: Form Wizard Progress -->
+                    <div class="m-wizard__progress">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <!--end: Form Wizard Progress -->
+                    <!--begin: Form Wizard Nav -->
+                    <div class="m-wizard__nav">
+                        <div class="m-wizard__steps">
+                            <div class="m-wizard__step m-wizard__step--current" m-wizard-target="m_wizard_form_step_1">
+                                <a href="#" class="m-wizard__step-number">
+                                    <span><i class="fa  flaticon-placeholder"></i></span>
+                                </a>
+                                <div class="m-wizard__step-info">
+                                    <div class="m-wizard__step-title">
+                                        1. 客户信息
+                                    </div>
+                                    <div class="m-wizard__step-desc">
+                                        身份证、名字<br>
+                                        手机号
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_2">
+                                <a href="#" class="m-wizard__step-number">
+                                    <span><i class="fa  flaticon-layers"></i></span>
+                                </a>
+                                <div class="m-wizard__step-info">
+                                    <div class="m-wizard__step-title">
+                                        2. 银行卡信息
+                                    </div>
+                                    <div class="m-wizard__step-desc">
+                                        Lorem ipsum doler amet elit<br>
+                                        sed eiusmod tempors
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-wizard__step" m-wizard-target="m_wizard_form_step_3">
+                                <a href="#" class="m-wizard__step-number">
+                                    <span><i class="fa  flaticon-layers"></i></span>
+                                </a>
+                                <div class="m-wizard__step-info">
+                                    <div class="m-wizard__step-title">
+                                        3. 确认
+                                    </div>
+                                    <div class="m-wizard__step-desc">
+                                        Lorem ipsum doler amet elit<br>
+                                        sed eiusmod tempors
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end: Form Wizard Nav -->
+                </div>
+                <!--end: Form Wizard Head -->
+                <!--begin: Form Wizard Form-->
+                <div class="m-wizard__form">
+                    <!--
+            1) Use m-form--label-align-left class to alight the form input lables to the right
+            2) Use m-form--state class to highlight input control borders on form validation
+            -->
+                    <form class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                        <!--begin: Form Body -->
+                        <div class="m-portlet__body">
+                            <!--begin: Form Wizard Step 1-->
+                            <div class="m-wizard__form-step m-wizard__form-step--current" id="m_wizard_form_step_1">
+                                <div class="row">
+                                    <div class="col-xl-8 offset-xl-2">
+                                        <div class="m-form__section m-form__section--first">
+                                            <div class="m-form__heading">
+                                                <h3 class="m-form__heading-title">客户信息</h3>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* 姓名:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <input type="text" name="name" id="guest_name" class="form-control m-input" placeholder="张三" value="">
+                                                    <span class="m-form__help">请输入名字</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* 身份证:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <input type="text" name="identify" id="identify" class="form-control m-input" placeholder="310112850409522" value="">
+                                                    <span class="m-form__help">请输入身份证  </span>
+                                                    <span id="identify_open_amount" value=""></span>
+                                                    <span id="identify_open_amount2" value=""></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* 手机</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
+                                                        <input type="text" name="phone" id="guest_phone" class="form-control m-input" placeholder="13800000000" value="">
+                                                    </div>
+                                                    <span class="m-form__help">输入你的有效手机号码 E.g: 138-0000-0000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                        <div class="m-form__section">
+                                            <div class="m-form__heading">
+                                                <h3 class="m-form__heading-title">
+                                                    家庭住址
+                                                </h3>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* 地址1:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <input type="text" name="address1" id="address1" class="form-control m-input" placeholder="" value="">
+                                                    <span class="m-form__help">县、镇、街道</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">地址 2:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <input type="text" name="address2" id="address2" class="form-control m-input" placeholder="" value="">
+                                                    <span class="m-form__help">
+                                                            街道号、门牌号
+                                                        </span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* 市:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <input type="text" name="city" id="city_name" class="form-control m-input" placeholder="韶关市" value="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">* 省份:</label>
+                                                <div class="col-xl-9 col-lg-9">
+                                                    <input type="text" name="state" id="state_name" class="form-control m-input" placeholder="广东省" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Step 1-->
+                            <!--begin: Form Wizard Step 2-->
+                            <div class="m-wizard__form-step" id="m_wizard_form_step_2">
+                                <div class="row">
+                                    <div class="col-xl-8 offset-xl-2">
+                                        <div class="m-form__section m-form__section--first">
+                                            <div class="m-form__heading">
+                                                <h3 class="m-form__heading-title">银行卡信息</h3>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <div class="col-lg-12">
+                                                    <label class="form-control-label">* 开户金额:</label>
+                                                    <input type="number" name="open_money" id="open_money" class="form-control m-input" placeholder="" value="">
+                                                    <span class="m-form__help">请输入开户金额</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group m-form__group row">
+                                                <div class="col-lg-6 m-form__group-sub">
+                                                    <label class="form-control-label">* Password:</label>
+                                                    <input type="password" name="password_one" id="password_one" class="form-control m-input" placeholder="" value="qwerty">
+                                                    <span class="m-form__help">请输入6位数字密码</span>
+                                                </div>
+                                                <div class="col-lg-6 m-form__group-sub">
+                                                    <label class="form-control-label">* Password:</label>
+                                                    <input type="password" name="password_again" id="password_again" class="form-control m-input" placeholder="" value="qwerty">
+                                                    <span class="m-form__help">请输入6位数字确认密码</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                        <div class="m-form__section">
+                                            <div class="m-form__heading">
+                                                <h3 class="m-form__heading-title">银行卡类型</h3>
+                                            </div>
+                                            <div class="form-group m-form__group">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label class="m-option">
+                                                                <span class="m-option__control">
+                                                                    <span class="m-radio m-radio--state-brand">
+                                                                        <input type="radio" name="billing_delivery" value="I类">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </span>
+                                                            <span class="m-option__label">
+                                                                    <span class="m-option__head">
+                                                                        <span class="m-option__title">
+                                                                            I类账户
+                                                                        </span>
+                                                                    </span>
+                                                                    <span class="m-option__body">
+                                                                        Ⅰ类户是个“大钱柜”
+                                                                        (&nbsp;主要的资金家底都在上面，安全性要求高，不用每天拿着出门；&nbsp;)
+                                                                    </span>
+                                                                </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label class="m-option">
+                                                                <span class="m-option__control">
+                                                                    <span class="m-radio m-radio--state-brand">
+                                                                        <input type="radio" name="billing_delivery" value="II类">
+                                                                        <span></span>
+                                                                    </span>
+                                                                </span>
+                                                            <span class="m-option__label">
+                                                                    <span class="m-option__head">
+                                                                        <span class="m-option__title">
+                                                                            II类账户
+                                                                        </span>
+                                                                    </span>
+                                                                    <span class="m-option__body">
+                                                                        Ⅱ类账户就相当于“钱包”
+                                                                        (&nbsp;用于日常稍大的开支&nbsp;)
+                                                                    </span>
+                                                                </span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="m-form__help">
+                                                    <!--must use this helper element to display error message for the options-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Step 2-->
+                            <!--begin: Form Wizard Step 3-->
+                            <div class="m-wizard__form-step" id="m_wizard_form_step_3">
+                                <div class="row">
+                                    <div class="col-xl-8 offset-xl-2">
+                                        <!--begin::Section-->
+                                        <ul class="nav nav-tabs m-tabs-line--2x m-tabs-line m-tabs-line--danger" role="tablist">
+                                            <li class="nav-item m-tabs__item">
+                                                <a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_form_confirm_1" role="tab">1. Client Information</a>
+                                            </li>
+                                            <li class="nav-item m-tabs__item">
+                                                <a class="nav-link m-tabs__link" data-toggle="tab" href="#m_form_confirm_2" role="tab">2. Account Setup</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content m--margin-top-40">
+                                            <div class="tab-pane active" id="m_form_confirm_1" role="tabpanel">
+                                                <div class="m-form__section m-form__section--first">
+                                                    <div class="m-form__heading">
+                                                        <h4 class="m-form__heading-title">Client Details</h4>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">Name:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_name" value=""></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                                            身份证:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_identify" value="" ></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">手机:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_guest_phone"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                                <div class="m-form__section">
+                                                    <div class="m-form__heading">
+                                                        <h4 class="m-form__heading-title">Corresponding Address <i data-toggle="m-tooltip" data-width="auto" class="m-form__heading-help-icon flaticon-info" title="Some help text goes here"></i></h4>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">地址 1:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_address1"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">地址 2:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_address2">无</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">城市:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_city_name"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">省份:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_state_name"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="m_form_confirm_2" role="tabpanel">
+                                                <div class="m-form__section m-form__section--first">
+                                                    <div class="m-form__heading">
+                                                        <h4 class="m-form__heading-title">账户信息：</h4>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">开户金额:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_open_money" value=""></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">卡类型:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span id="span_card_type" class="m-form__control-static"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">绑定手机:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static" id="span_guest_phone_1"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">卡密码:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static">*********</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-form__group m-form__group--sm row">
+                                                        <label class="col-xl-3 col-lg-3 col-form-label">登录密码:</label>
+                                                        <div class="col-xl-9 col-lg-9">
+                                                            <span class="m-form__control-static">默认卡号后八位</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                            </div>
+                                        </div>
+                                        <!--end::Section-->
+                                        <!--end::Section-->
+                                        <div class="m-separator m-separator--dashed m-separator--lg"></div>
+                                        <div class="form-group m-form__group m-form__group--sm row">
+                                            <div class="col-xl-12">
+                                                <div class="m-checkbox-inline">
+                                                    <label class="m-checkbox m-checkbox--solid m-checkbox--brand">
+                                                        <input type="checkbox" name="accept" value="1">
+                                                        Click here to indicate that you have read and agree to the terms presented in the Terms and Conditions agreement
+                                                        <span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Form Wizard Step 3-->
+                        </div>
+                        <!--end: Form Body -->
+                        <!--begin: Form Actions -->
+                        <div class="m-portlet__foot m-portlet__foot--fit m--margin-top-40">
+                            <div class="m-form__actions">
+                                <div class="row">
+                                    <div class="col-lg-2"></div>
+                                    <div class="col-lg-4 m--align-left">
+                                        <a href="#" class="btn btn-secondary m-btn m-btn--custom m-btn--icon" data-wizard-action="prev">
+                                                <span>
+                                                    <i class="la la-arrow-left"></i>&nbsp;&nbsp;
+                                                    <span>Back</span>
+                                                </span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4 m--align-right">
+                                        <a href="#" name="submitOpen" class="btn btn-primary m-btn m-btn--custom m-btn--icon" data-wizard-action="submit">
+                                                <span>
+                                                    <i class="la la-check"></i>&nbsp;&nbsp;
+                                                    <span>Submit</span>
+                                                </span>
+                                        </a>
+                                        <a href="#" class="btn btn-warning m-btn m-btn--custom m-btn--icon" data-wizard-action="next">
+                                                <span>
+                                                    <span>Save & Continue</span>&nbsp;&nbsp;
+                                                    <i class="la la-arrow-right"></i>
+                                                </span>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Actions -->
+                    </form>
+                </div>
+                <!--end: Form Wizard Form-->
+            </div>
+            <!--end: Form Wizard-->
+        </div>
+        <!--End::Main Portlet-->
+    </div>
+</div>
+<!-- end:: Body -->
+<!--begin::Global Theme Bundle
+    <script src="/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>-->
+<script src="https://cdn.bootcss.com/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="/assets/app/js/vendors.bundle.js" type="text/javascript"></script>
+<script src="/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+<!--end::Global Theme Bundle -->
+<!--begin::Page Scripts -->
+<script src="/assets/app/js/wizarded.js" type="text/javascript"></script>
+<!--end::Page Scripts -->
+<script type="text/javascript">
+
+
+    function jump(){
+        window.location.replace("http://localhost:8901/openSuccessful.html")
+    }
+    $(function() {
+
+        var isISort = false;
+        var isFour = false;
+
+        $("a[name='submitOpen']").click(function(){
+            swal({
+                title: "确定要提交吗",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: ["取消","确定"],
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    swal("已经成功提交", {
+                        icon: "success",
+                    });
+                    setTimeout(jump,2000);
+                } else {
+                    swal("取消提交!");
+                }})
+            });
+
+        //输入框的值改变时触发,获取给span标签
+        $("#guest_name").on("input", function(e) {
+            //获取input输入的值
+            var guest_name_ref = $("#guest_name").val();
+            $("#span_name").text(guest_name_ref);
+        });
+        // 身份证
+        $("#identify").on("input", function(e) {
+            //获取input输入的值
+            var identify_ref = $("#identify").val();
+            $("#span_identify").text(identify_ref);
+        });
+        // 手机
+        $("#guest_phone").on("input", function(e) {
+            //获取input输入的值
+            var guest_phone_ref = $("#guest_phone").val();
+            $("#span_guest_phone").text(guest_phone_ref);
+            $("#span_guest_phone_1").text(guest_phone_ref);
+
+        });
+        //输入框的值改变时触发,获取给span标签
+        $("#address1").on("input", function(e) {
+            //获取input输入的值
+            var address1_ref = $("#address1").val();
+            $("#span_address1").text(address1_ref);
+        });
+        //输入框的值改变时触发,获取给span标签
+        $("#address2").on("input", function(e) {
+            //获取input输入的值
+            var address2_ref = $("#address2").val();
+            $("#span_address2").text(address2_ref);
+        });
+
+        $("#city_name").on("input", function(e) {
+            //获取input输入的值
+            var city_name_ref = $("#city_name").val();
+            $("#span_city_name").text(city_name_ref);
+        });
+
+        $("#state_name").on("input", function(e) {
+            //获取input输入的值
+            var state_name_ref = $("#state_name").val();
+            $("#span_state_name").text(state_name_ref);
+        });
+
+        $("#open_money").on("input", function(e) {
+            //获取input输入的值
+            var open_money_ref = $("#open_money").val();
+            $("#span_open_money").text('￥' + open_money_ref + '元');
+        });
+
+        // 判断选取的类型
+        $('input:radio[name="billing_delivery"]').click(function() {
+
+            if(isFour) {
+                alert("该用户已经卡了四张实体卡，请注销一张再来开户" + isFour);
+                $('input:radio[name="billing_delivery"]').eq(0).prop('checked', false);
+                $('input:radio[name="billing_delivery"]').eq(1).prop('checked', false);
+                $('input:radio[name="billing_delivery"]').prop('disabled', true);
+                return;
+            }
+            if(isISort) {
+                $('input:radio[name="billing_delivery"]').eq(0).prop('checked', false);
+                $('input:radio[name="billing_delivery"]').eq(0).prop('disabled', true);
+                alert("已经开通了I类账户，请选择其他类型账户");
+                // 已设置disable
+                isISort = false;
+            }
+
+
+//            $('input:radio[name="billing_delivery"]:checked').prop('checked', false);
+            var checkValue = $('input:radio[name="billing_delivery"]:checked').val();
+            $("#span_card_type").text(checkValue);
+        });
+
+        // 异步请求判断用户是否已经开过户
+        $('#identify').blur(function(){
+
+            isISort = false;
+            isFour = false;
+
+            var identify = $("#identify").val();
+            if(identify.length < 14) {
+                return;
+            }
+            var reg18 = /^[1-9]\d{5}(18|19|20|(3\d))\d{2}((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
+            var reg15 = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
+            if((reg18.test(identify) === false) && (reg15.test(identify) === false)){
+                return ;
+            }
+            $.ajax({
+                type: "POST",      // 请求方式
+                url: "checked",    // 验证
+                datatype:"json",   // json格式
+                data: "identify="+identify,   //参数
+                success: function(data){  //返回值
+                    if(data !== null && data !== "not_ok"){
+                        alert(data);
+                        // 看似是json对象，实际是字符串，所以转换为json对象
+                        var data = JSON.parse(data);
+
+                        if(data["num"] === "4") {
+                            isFour = true;
+                            isISort = true;
+                        }
+                        // Object.keys(data).length获取key/value方式的长度
+                        if(Object.keys(data).length ===3 ) {
+                            isISort = true;
+                            $("#identify_open_amount").text(data["ICard"]).css("color","red").css("font-size","15px");
+                            $("#identify_open_amount2").text(data["cardNumber"]).css("color","red").css("font-size","15px");
+                        } else {
+                            $("#identify_open_amount").text("");
+                            $("#identify_open_amount2").text(data["cardNumber"]).css("color","red").css("font-size","15px");
+                        }
+                    } else {
+                        $("#identify_open_amount").text("");
+                        $("#identify_open_amount2").text("");
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+
+</html>

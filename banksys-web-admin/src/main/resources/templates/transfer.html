@@ -1,0 +1,152 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<!-- begin::Head -->
+<head>
+    <meta charset="utf-8"/>
+    <title>银行账目管理 | 转账</title>
+    <meta name="description" content="Multi column form examples">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+
+
+    <!--begin::Global Theme Styles -->
+    <link href="/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css"/>
+
+    <!--RTL version:<link href="/assets/vendors/base/vendors.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+    <link href="/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css"/>
+
+    <!--RTL version:<link href="/assets/demo/default/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
+
+    <!--end::Global Theme Styles -->
+    <link rel="shortcut icon" href="/assets/demo/default/media/img/logo/favicon.ico"/>
+</head>
+
+<!-- end::Head -->
+
+<!-- begin::Body -->
+<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+
+
+<!-- begin::Body -->
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+
+    <div class="m-content">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!--begin::Portlet-->
+                <div class="m-portlet">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+												<span class="m-portlet__head-icon m--hide">
+													<i class="la la-gear"></i>
+												</span>
+                                <h3 class="m-portlet__head-text">
+                                    转账操作
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--begin::Form-->
+                    <form class="m-form m-form--fit m-form--label-align-right m-form--group-seperator-dashed">
+                        <div class="m-portlet__body">
+                            <div class="form-group m-form__group row">
+                                <div class="col-lg-6">
+                                    <label>全名:</label>
+                                    <input type="email" class="form-control m-input" placeholder="请输入对方姓名">
+                                    <span class="m-form__help">请输入对方姓名</span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="">对方账户:</label>
+                                    <input type="email" class="form-control m-input" placeholder="请输入转账账户">
+                                    <span class="m-form__help">请输入转账账户</span>
+                                </div>
+                            </div>
+                            <div class="form-group m-form__group row">
+                                <div class="col-lg-6">
+                                    <label>你的账户:</label>
+                                    <div class="m-input-icon m-input-icon--right">
+                                        <input type="text" class="form-control m-input" placeholder="你的账户">
+                                    </div>
+                                    <span class="m-form__help">你的账户</span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="">密码:</label>
+                                    <div class="m-input-icon m-input-icon--right">
+                                        <input type="password" class="form-control m-input" placeholder="请输入密码">
+                                    </div>
+                                    <span class="m-form__help">请输入密码</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
+                            <div class="m-form__actions m-form__actions--solid">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <button type="button" class="btn btn-primary" onclick="comfirmTransfer()">确认
+                                        </button>
+                                        <button type="reset" class="btn btn-secondary">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!--end::Form-->
+                </div>
+
+                <!--end::Portlet-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- end:: Body -->
+
+
+<!-- begin::Quick Nav -->
+
+<!--begin::Global Theme Bundle -->
+<script src="https://cdn.bootcss.com/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+<script src="/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+<!--end::Global Theme Bundle -->
+
+<script>
+
+    function jump(){
+        swal("转账成功！", {
+            icon: "success",
+        });
+    }
+
+    function comfirmTransfer() {
+        swal({
+            title: "确定要提交吗",
+            text: "一旦转账就会立即到账！",
+            icon: "warning",
+            buttons: ["取消","确定"],
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                setTimeout(jump,2000);
+                //window.location.replace("http://localhost:8901/openSuccessful.html")
+            } else {
+                swal("Your imaginary file is safe!");
+            }
+    });
+
+    }
+
+</script>
+
+</body>
+
+<!-- end::Body -->
+</html>
